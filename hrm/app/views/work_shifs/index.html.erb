@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Work shifs</h1>
+
+<div id="work_shifs">
+  <% @work_shifs.each do |work_shif| %>
+    <%= render work_shif %>
+    <p>
+      <%= link_to "Show this work shif", work_shif %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New work shif", new_work_shif_path %>

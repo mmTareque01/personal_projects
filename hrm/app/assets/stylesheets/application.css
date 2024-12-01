@@ -1,0 +1,31 @@
+/* @import 'styles'; */
+@import './static/styles.css';
+
+ /* vendor css */
+@import './static/vendors/css/vendors.min.css';
+@import './static/vendors/css/charts/apexcharts.css';
+@import './static/vendors/css/extensions/toastr.min.css';
+
+/* theme css */
+@import './static/css/bootstrap.css';
+@import './static/css/bootstrap-extended.css';
+@import './static/css/colors.css';
+@import './static/css/components.css';
+@import './static/css/themes/dark-layout.css';
+@import './static/css/themes/bordered-layout.css';
+@import './static/css/themes/semi-dark-layout.css';
+
+/* page css */
+@import './static/css/core/menu/menu-types/vertical-menu.css';
+@import './static/css/pages/dashboard-ecommerce.css';
+@import './static/css/plugins/charts/chart-apex.css';
+@import './static/css/plugins/extensions/ext-component-toastr.css';
+/* @import './static/';
+@import './static/';
+@import './static/';
+@import './static/';
+@import './static/';
+@import './static/';
+@import './static/';
+@import './static/';
+@import './static/'; */

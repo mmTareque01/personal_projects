@@ -1,0 +1,51 @@
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: your_postgres_username
+#   password: your_postgres_password
+#   host: localhost
+
+
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
+
+# development:
+#   <<: *default
+#   database: storage/development.sqlite3
+
+# test:
+#   <<: *default
+#   database: storage/test.sqlite3
+
+# production:
+#   <<: *default
+#   database: storage/production.sqlite3
+
+# config/database.yml
+# DATABASE_URL="postgresql://postgres:12345678@localhost:5432/di"
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: 12345678
+  host: localhost
+
+development:
+  <<: *default
+  database: hrm
+
+test:
+  <<: *default
+  database: hrm
+
+production:
+  <<: *default
+  database: hrm
+  username: postgres
+  password: 12345678
+  host: localhost

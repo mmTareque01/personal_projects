@@ -1,0 +1,31 @@
+<%= form_with(model: education, url: admin_educations_url) do |form| %>
+  <% if education.errors.any? %>
+    <div>
+      <h2><%= pluralize(education.errors.count, "error") %> prohibited this education from being saved:</h2>
+
+      <ul>
+        <% education.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "Name", style: "display: block" %>
+    <%= form.text_field :level, class: "form-control", placeholder:"Name", ariaLabel:"Username", ariaDescribedby:"basic-addon1" %>
+  </div>
+
+<br>
+  <div>
+    <%= form.label "Others", style: "display: block" %>
+    <%= form.text_area :meta, class:"form-control", ariaLabel:"With textarea", placeholder:"Others" %>
+  </div>
+
+<br>
+
+  <div>
+  <%= form.submit "Save", class: "btn btn-primary" %>
+</div>
+
+<% end %>

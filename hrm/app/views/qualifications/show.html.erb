@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @qualification %>
+
+<div>
+  <%= link_to "Edit this qualification", edit_qualification_path(@qualification) %> |
+  <%= link_to "Back to qualifications", qualifications_path %>
+
+  <%= button_to "Destroy this qualification", @qualification, method: :delete %>
+</div>

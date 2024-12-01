@@ -1,0 +1,29 @@
+
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-header row"></div>
+    <div class="content-body">
+      <!-- Dashboard Ecommerce Starts -->
+<p style="color: green"><%= notice %></p>
+    <h1>Employees</h1>
+
+<div id="employees">
+  <% @employees.each do |employee| %>
+    <%= render employee %>
+    <p>
+      <%= link_to "Show this employee", employee %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New employee", new_employee_path %>
+
+      <!-- Dashboard Ecommerce ends -->
+    </div>
+  </div>
+</div>
+
+

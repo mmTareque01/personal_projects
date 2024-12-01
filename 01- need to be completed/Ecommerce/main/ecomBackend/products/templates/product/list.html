@@ -1,0 +1,106 @@
+{% extends "layout.html" %} {% load static %} {%block title%} Create Invoice
+{%endblock%} {%block head%}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'vendors/css/tables/datatable/dataTables.bootstrap5.min.css' %}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'vendors/css/tables/datatable/extensions/dataTables.checkboxes.css' %}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'vendors/css/tables/datatable/responsive.bootstrap5.min.css' %}"
+/>
+<!-- END: Vendor CSS-->
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/pages/app-invoice-list.css' %}"
+/>
+
+{%endblock%} {%block content%}
+<!-- BEGIN: Content-->
+<div class="app-content content">
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-header row"></div>
+    <div class="content-body">
+      <a href="{{routes.product_create}}"
+        ><button type="button" class="btn btn-primary">+ New Product</button></a
+      >
+      <br /><br />
+      <section class="invoice-list-wrapper">
+        <div class="card">
+          <div class="card-datatable table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <!-- <th></th> -->
+                  <th>Product</th>
+                  <th>Image</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if products|length %} 
+                {% for product in products %}
+
+                <tr>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.images }}</td>
+                  <td>{{ product.price }}</td>
+                  <td>{{ product.stock }}</td>
+                  <td>
+                    <a href="{{routes.product_view}}/{{ product.id }}">View</a>
+                  </td>
+                  <td>
+                    <a href="{{routes.product_update}}/{{ product.id }}"
+                      >Edit</a
+                    >
+                  </td>
+                  <td>
+                    <a href="{{routes.product_delete}}/{{ product.id }}"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                {% endfor %} 
+                {% else %}
+
+                <p class="text-center">Product Not Found!</p>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<!-- END: Content-->
+{% block script %}
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="{% static 'vendors/js/extensions/moment.min.js' %}"></script>
+<script src="{% static 'vendors/js/tables/datatable/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'vendors/js/tables/datatable/datatables.buttons.min.js' %}"></script>
+<script src="{% static 'vendors/js/tables/datatable/dataTables.bootstrap5.min.js' %}"></script>
+<script src="{% static 'vendors/js/tables/datatable/datatables.checkboxes.min.js' %}"></script>
+<script src="{% static 'vendors/js/tables/datatable/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'vendors/js/tables/datatable/responsive.bootstrap5.js' %}"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="{% static 'js/scripts/pages/app-invoice-list.js' %}"></script>
+<!-- END: Page JS-->
+
+{% endblock %} {%endblock%}

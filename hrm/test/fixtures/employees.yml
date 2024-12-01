@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  f_name: MyString
+  l_name: MyString
+  n_name: MyString
+  e_id: 1
+  marital_status: MyString
+  gender: MyString
+  smoker: false
+  dob: 2023-11-12
+  nationality: one
+
+two:
+  f_name: MyString
+  l_name: MyString
+  n_name: MyString
+  e_id: 1
+  marital_status: MyString
+  gender: MyString
+  smoker: false
+  dob: 2023-11-12
+  nationality: two

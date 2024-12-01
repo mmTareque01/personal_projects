@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @work_shif %>
+
+<div>
+  <%= link_to "Edit this work shif", edit_work_shif_path(@work_shif) %> |
+  <%= link_to "Back to work shifs", work_shifs_path %>
+
+  <%= button_to "Destroy this work shif", @work_shif, method: :delete %>
+</div>

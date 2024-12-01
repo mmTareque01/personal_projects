@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Nationalities</h1>
+
+<div id="nationalities">
+  <% @nationalities.each do |nationality| %>
+    <%= render nationality %>
+    <p>
+      <%= link_to "Show this nationality", nationality %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New nationality", new_nationality_path %>
